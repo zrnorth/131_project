@@ -1,0 +1,6 @@
+#!/bin/bash
+sed 's/1025/12371/' /u/cs/fac/eggert/src/Twisted-12.3.0/doc/core/examples/chatserver.py >chatserver.py
+#use the -n option to forestall runaway servers
+twistd -n -y chatserver.py
+
+#telnet to port 12370 from another session.

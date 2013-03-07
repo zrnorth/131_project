@@ -1,0 +1,5 @@
+#!/bin/bash
+#use the -n option to forestall runaway servers
+twistd -n -y mychatserver.py
+
+#telnet to port 12370 from another session.
