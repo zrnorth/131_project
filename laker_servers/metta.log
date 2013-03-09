@@ -1,0 +1,13 @@
+2013-03-08 16:08:15-0800 [-] Log opened.
+2013-03-08 16:08:15-0800 [-] MettaFactory starting on 12974
+2013-03-08 16:08:15-0800 [-] Starting factory <__main__.MettaFactory instance at 0x16cf998>
+2013-03-08 16:08:18-0800 [Metta,0,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Metta,0,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Metta,0,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Metta,0,127.0.0.1] Starting factory <__main__.SCFactory instance at 0x167f6c8>
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0x167f6c8>
+2013-03-08 16:08:24-0800 [-] Received SIGINT, shutting down.
+2013-03-08 16:08:24-0800 [__main__.MettaFactory] (TCP Port 12974 Closed)
+2013-03-08 16:08:24-0800 [__main__.MettaFactory] Stopping factory <__main__.MettaFactory instance at 0x16cf998>
+2013-03-08 16:08:24-0800 [-] Main loop terminated.

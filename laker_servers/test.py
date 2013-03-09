@@ -6,12 +6,17 @@
 from twisted.internet.protocol import Factory, ClientFactory, ReconnectingClientFactory
 from twisted.protocols.basic import LineReceiver
 from twisted.internet import reactor
+from twisted.internet.defer import Deferred
+from twisted.internet.protocol import Protocol
 from twisted.python import log
+from twisted.web.client import Agent
+from twisted.web.http_headers import Headers
+
 import sys
 log.startLogging(sys.stdout)
 
 import time
-import twitter # Google Twitter API
+
 
 class Blake(LineReceiver):
 
@@ -30,7 +35,39 @@ class Blake(LineReceiver):
 
 	servername = 'Blake'
 	hosts = [12971, 12973]
-	#initialize our subclient to talk to other servers
+
+
+	# json handler code for handling WHATSAT
+	class json_initializer(Protocol):
+		json = ''
+		def __init__(self, finished, servername, time_diff, params, outer):
+			self.finished = finished
+			self.servername = servername
+			self.time_diff = time_diff
+			self.params = params
+			self.outer = outer
+
+		def dataReceived(self,bytes):
+			self.json += bytes
+
+		def connectionLost(self, reason):
+			print reason
+			last_json = self.json
+		
+			if self.time_diff >= 0:
+				td_str = '+' + str(self.time_diff)
+			else: #time_diff < 0
+				td_str = str(self.time_diff)
+			msg = 'AT ' + self.servername + ' ' + td_str + ' ' + ' '.join(self.params) + '\n' + self.json + '\n'
+		
+			self.outer.sendLine(msg)
+			self.finished.callback(None)
+	
+	def html_cb(self, response, servername, time_diff, params):
+		finished = Deferred()
+		response.deliverBody(self.json_initializer(finished, servername, time_diff, params, self))
+		return finished
+
 
 	def __init__(self, user_info):
 		self.user_info = user_info
@@ -87,6 +124,7 @@ class Blake(LineReceiver):
 
 		# check that the user has sent IAMAT data in the past
 		if not self.user_info.has_key(other_client):
+			print 'no key'
 			self.handle_MALFORMED(params)
 			return
 
@@ -97,10 +135,37 @@ class Blake(LineReceiver):
 
 		time_diff = time.time() - client_time
 
-		# here we are going to call the Twitter API to get WHATSAT data
 
-		self.send_AT(servername, time_diff, [other_client,latlong,client_time], json)
+		long = ''
+		lat = ''
+		# break up the latlong into lat and long, assuming correct format
+		for i in xrange(len(latlong[1:])):
+			if latlong[i]=='+' or latlong[i]=='-':
+				long = latlong[i:]
+				lat = latlong[0:(i-1)]
 
+		# stupid search param formatting -- no +s on positive GPS coords
+		long = long.replace('+','')
+		lat = lat.replace('+','')
+
+		# need to construct the http call from the twitter api
+		url = "http://search.twitter.com/search.json?"
+		url += "geocode=" + str(lat) + ',' + str(long) + ',' + str(radius_in_km) + 'km' # geo data
+		url += '&rpp=' + str(upper_bound_tweets) + '&result_type=mixed'       # num tweets
+		
+		# need to query the twitter server to get json
+		agent = Agent(reactor)
+		d = agent.request(
+			'GET',
+			url,
+			Headers({'User-Agent': ['Twisted']}),
+			None)
+		d.addCallback(self.html_cb, servername, time_diff, [other_client,latlong,str(client_time)])
+		# This code should return when the request finishes, and the json will be loaded
+		# into the class variable
+
+		
+		# self.send_AT(servername, time_diff, [other_client,latlong,str(client_time)], self.last_json)
 
 	def handle_IAMAT(self, params):
 		
@@ -113,18 +178,12 @@ class Blake(LineReceiver):
 		# IAMAT client_id latlong POSIX_time
 		try:
 			client_id = str(params[1])
-			l = params[2].split('+')[1:]
-			latlong = [float(i) for i in l] #hackish way to split up the latlong
+			latlong = params[2]
 			client_time = float(params[3])
 		except ValueError:
 			self.handle_MALFORMED(params)
 			return
 	
-		# check for proper latlong input	
-		if len(latlong) != 2:
-			self.handle_MALFORMED(params)
-			return
-
 		# need to log the client's data and return with an AT
 		
 		#get current POSIX time and find diff with client time
@@ -145,8 +204,7 @@ class Blake(LineReceiver):
 			server_name = str(params[1])
 			time_diff = float(params[2])
 			client_id = str(params[3])
-			l = params[4].split('+')[1:]
-			latlong = [float(i) for i in l]
+			latlong = params[4]
 			client_time = float(params[5])
 		except ValueError:
 			self.handle_MALFORMED(params)
@@ -174,7 +232,9 @@ class Blake(LineReceiver):
 			td_str = '+' + str(time_diff)
 		else: #time_diff < 0
 			td_str = str(time_diff)
-		msg = 'AT ' + servername + ' ' + td_str + ' ' + ' '.join(params) + json + '\n'
+		msg = 'AT ' + servername + ' ' + td_str + ' ' + ' '.join(params) + '\n'
+		if json != '':
+			msg += json + '\n'
 		
 		self.sendLine(msg) # send line back to client
 		

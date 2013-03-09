@@ -1,0 +1,28 @@
+2013-03-08 16:07:49-0800 [-] Log opened.
+2013-03-08 16:07:49-0800 [-] HowardFactory starting on 12973
+2013-03-08 16:07:49-0800 [-] Starting factory <__main__.HowardFactory instance at 0xe44998>
+2013-03-08 16:08:12-0800 [Howard,0,127.0.0.1] Line received!: IAMAT kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Howard,0,127.0.0.1] Starting factory <__main__.SCFactory instance at 0xd3b758>
+2013-03-08 16:08:12-0800 [Uninitialized] Connected
+2013-03-08 16:08:12-0800 [Uninitialized] Connected
+2013-03-08 16:08:12-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0xd3b758>
+2013-03-08 16:08:12-0800 [Howard,1,127.0.0.1] Line received!: AT Howard +9669588.95698 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Howard,1,127.0.0.1] 
+2013-03-08 16:08:12-0800 [Howard,1,127.0.0.1] ('Howard', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:12-0800 [Howard,2,127.0.0.1] Line received!: AT Howard +9669588.95698 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Howard,2,127.0.0.1] 
+2013-03-08 16:08:12-0800 [Howard,2,127.0.0.1] ('Howard', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Howard,3,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Howard,3,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Howard,3,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Howard,3,127.0.0.1] Starting factory <__main__.SCFactory instance at 0xf5def0>
+2013-03-08 16:08:18-0800 [Howard,4,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Howard,4,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Howard,4,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0xf5def0>
+2013-03-08 16:08:23-0800 [-] Received SIGINT, shutting down.
+2013-03-08 16:08:23-0800 [__main__.HowardFactory] (TCP Port 12973 Closed)
+2013-03-08 16:08:23-0800 [__main__.HowardFactory] Stopping factory <__main__.HowardFactory instance at 0xe44998>
+2013-03-08 16:08:23-0800 [-] Main loop terminated.

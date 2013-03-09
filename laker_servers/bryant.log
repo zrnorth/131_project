@@ -1,0 +1,32 @@
+2013-03-08 16:07:43-0800 [-] Log opened.
+2013-03-08 16:07:43-0800 [-] BryantFactory starting on 12971
+2013-03-08 16:07:43-0800 [-] Starting factory <__main__.BryantFactory instance at 0x29cc998>
+2013-03-08 16:08:12-0800 [Bryant,1,127.0.0.1] Line received!: AT Howard +9669588.95698 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Bryant,1,127.0.0.1] 
+2013-03-08 16:08:12-0800 [Bryant,1,127.0.0.1] ('Howard', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:12-0800 [Bryant,1,127.0.0.1] Starting factory <__main__.SCFactory instance at 0x2b9aea8>
+2013-03-08 16:08:12-0800 [Bryant,2,127.0.0.1] Line received!: AT Howard +9669588.95698 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Bryant,2,127.0.0.1] 
+2013-03-08 16:08:12-0800 [Bryant,2,127.0.0.1] ('Howard', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:12-0800 [Uninitialized] Connected
+2013-03-08 16:08:12-0800 [Uninitialized] Connected
+2013-03-08 16:08:12-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0x2b9aea8>
+2013-03-08 16:08:18-0800 [Bryant,0,127.0.0.1] Line received!: IAMAT kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Bryant,0,127.0.0.1] Starting factory <__main__.SCFactory instance at 0x2bb3638>
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0x2bb3638>
+2013-03-08 16:08:18-0800 [Bryant,3,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Bryant,3,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Bryant,3,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Bryant,4,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Bryant,4,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Bryant,4,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Bryant,5,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Bryant,5,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Bryant,5,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:24-0800 [-] Received SIGINT, shutting down.
+2013-03-08 16:08:24-0800 [__main__.BryantFactory] (TCP Port 12971 Closed)
+2013-03-08 16:08:24-0800 [__main__.BryantFactory] Stopping factory <__main__.BryantFactory instance at 0x29cc998>
+2013-03-08 16:08:24-0800 [-] Main loop terminated.

@@ -1,0 +1,27 @@
+2013-03-08 16:07:46-0800 [-] Log opened.
+2013-03-08 16:07:46-0800 [-] BlakeFactory starting on 12970
+2013-03-08 16:07:46-0800 [-] Starting factory <__main__.BlakeFactory instance at 0x233e998>
+2013-03-08 16:08:12-0800 [Blake,1,127.0.0.1] Line received!: AT Howard +9669588.95698 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Blake,1,127.0.0.1] 
+2013-03-08 16:08:12-0800 [Blake,1,127.0.0.1] ('Howard', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:12-0800 [Blake,1,127.0.0.1] Starting factory <__main__.SCFactory instance at 0x2466c68>
+2013-03-08 16:08:12-0800 [Uninitialized] Connected
+2013-03-08 16:08:12-0800 [Uninitialized] Connected
+2013-03-08 16:08:12-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0x2466c68>
+2013-03-08 16:08:12-0800 [Blake,2,127.0.0.1] Line received!: AT Howard +9669588.95698 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:12-0800 [Blake,2,127.0.0.1] 
+2013-03-08 16:08:12-0800 [Blake,2,127.0.0.1] ('Howard', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Blake,3,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Blake,3,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Blake,3,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:18-0800 [Blake,3,127.0.0.1] Starting factory <__main__.SCFactory instance at 0x2467b00>
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [Uninitialized] Connected
+2013-03-08 16:08:18-0800 [ServClient,client] Stopping factory <__main__.SCFactory instance at 0x2467b00>
+2013-03-08 16:08:18-0800 [Blake,4,127.0.0.1] Line received!: AT Bryant +9669595.01493 kiwi.cs.ucla.edu +27.5916+086.5640 1353118103.108893381
+2013-03-08 16:08:18-0800 [Blake,4,127.0.0.1] 
+2013-03-08 16:08:18-0800 [Blake,4,127.0.0.1] ('Bryant', '+27.5916+086.5640', 1353118103.1088934)
+2013-03-08 16:08:25-0800 [-] Received SIGINT, shutting down.
+2013-03-08 16:08:25-0800 [__main__.BlakeFactory] (TCP Port 12970 Closed)
+2013-03-08 16:08:25-0800 [__main__.BlakeFactory] Stopping factory <__main__.BlakeFactory instance at 0x233e998>
+2013-03-08 16:08:25-0800 [-] Main loop terminated.
